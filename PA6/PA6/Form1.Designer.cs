@@ -50,12 +50,13 @@
             this.txtCWID.Name = "txtCWID";
             this.txtCWID.Size = new System.Drawing.Size(363, 39);
             this.txtCWID.TabIndex = 1;
+            this.txtCWID.TextChanged += new System.EventHandler(this.ddd);
             // 
             // btnok
             // 
-            this.btnok.Location = new System.Drawing.Point(620, 472);
+            this.btnok.Location = new System.Drawing.Point(356, 181);
             this.btnok.Name = "btnok";
-            this.btnok.Size = new System.Drawing.Size(227, 75);
+            this.btnok.Size = new System.Drawing.Size(116, 54);
             this.btnok.TabIndex = 2;
             this.btnok.Text = "OK";
             this.btnok.UseVisualStyleBackColor = true;
@@ -63,9 +64,9 @@
             // 
             // btnClsoe
             // 
-            this.btnClsoe.Location = new System.Drawing.Point(863, 472);
+            this.btnClsoe.Location = new System.Drawing.Point(501, 181);
             this.btnClsoe.Name = "btnClsoe";
-            this.btnClsoe.Size = new System.Drawing.Size(201, 74);
+            this.btnClsoe.Size = new System.Drawing.Size(145, 54);
             this.btnClsoe.TabIndex = 3;
             this.btnClsoe.Text = "Close";
             this.btnClsoe.UseVisualStyleBackColor = true;
@@ -75,7 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1076, 558);
+            this.ClientSize = new System.Drawing.Size(744, 387);
             this.Controls.Add(this.btnClsoe);
             this.Controls.Add(this.btnok);
             this.Controls.Add(this.txtCWID);
@@ -84,6 +85,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "frmCWID";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmCWID_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
