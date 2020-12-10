@@ -24,6 +24,25 @@ namespace PA6
 
         private void btnok_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            frmMain myForm = new frmMain(txtCWID.Text);
+            if (myForm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+            else 
+            {
+                this.Close();
+            }
+        }
+
+        private void ddd(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmCWID_Load(object sender, EventArgs e)
+        {
 
         }
     }
