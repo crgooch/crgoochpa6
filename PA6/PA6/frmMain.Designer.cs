@@ -30,10 +30,10 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.txtTitleData = new System.Windows.Forms.TextBox();
-            this.txtAuthor = new System.Windows.Forms.TextBox();
-            this.txtGenreData = new System.Windows.Forms.Label();
-            this.txtGenre = new System.Windows.Forms.TextBox();
-            this.txtAuthorData = new System.Windows.Forms.Label();
+            this.txtAuthorData = new System.Windows.Forms.TextBox();
+            this.lblGenreData = new System.Windows.Forms.Label();
+            this.txtGenreData = new System.Windows.Forms.TextBox();
+            this.lblAuthorData = new System.Windows.Forms.Label();
             this.txtCopiesData = new System.Windows.Forms.TextBox();
             this.lblCopies = new System.Windows.Forms.Label();
             this.txtisbndata = new System.Windows.Forms.TextBox();
@@ -67,38 +67,37 @@
             this.txtTitleData.Size = new System.Drawing.Size(210, 39);
             this.txtTitleData.TabIndex = 1;
             // 
-            // txtAuthor
+            // txtAuthorData
             // 
-            this.txtAuthor.Location = new System.Drawing.Point(434, 131);
-            this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(210, 39);
-            this.txtAuthor.TabIndex = 3;
-            this.txtAuthor.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtAuthorData.Location = new System.Drawing.Point(434, 131);
+            this.txtAuthorData.Name = "txtAuthorData";
+            this.txtAuthorData.Size = new System.Drawing.Size(210, 39);
+            this.txtAuthorData.TabIndex = 3;
+            // 
+            // lblGenreData
+            // 
+            this.lblGenreData.AutoSize = true;
+            this.lblGenreData.Location = new System.Drawing.Point(428, 173);
+            this.lblGenreData.Name = "lblGenreData";
+            this.lblGenreData.Size = new System.Drawing.Size(94, 32);
+            this.lblGenreData.TabIndex = 2;
+            this.lblGenreData.Text = "Genre";
             // 
             // txtGenreData
             // 
-            this.txtGenreData.AutoSize = true;
-            this.txtGenreData.Location = new System.Drawing.Point(428, 173);
+            this.txtGenreData.Location = new System.Drawing.Point(434, 208);
             this.txtGenreData.Name = "txtGenreData";
-            this.txtGenreData.Size = new System.Drawing.Size(94, 32);
-            this.txtGenreData.TabIndex = 2;
-            this.txtGenreData.Text = "Genre";
+            this.txtGenreData.Size = new System.Drawing.Size(210, 39);
+            this.txtGenreData.TabIndex = 5;
             // 
-            // txtGenre
+            // lblAuthorData
             // 
-            this.txtGenre.Location = new System.Drawing.Point(434, 208);
-            this.txtGenre.Name = "txtGenre";
-            this.txtGenre.Size = new System.Drawing.Size(210, 39);
-            this.txtGenre.TabIndex = 5;
-            // 
-            // txtAuthorData
-            // 
-            this.txtAuthorData.AutoSize = true;
-            this.txtAuthorData.Location = new System.Drawing.Point(428, 96);
-            this.txtAuthorData.Name = "txtAuthorData";
-            this.txtAuthorData.Size = new System.Drawing.Size(99, 32);
-            this.txtAuthorData.TabIndex = 4;
-            this.txtAuthorData.Text = "Author";
+            this.lblAuthorData.AutoSize = true;
+            this.lblAuthorData.Location = new System.Drawing.Point(428, 96);
+            this.lblAuthorData.Name = "lblAuthorData";
+            this.lblAuthorData.Size = new System.Drawing.Size(99, 32);
+            this.lblAuthorData.TabIndex = 4;
+            this.lblAuthorData.Text = "Author";
             // 
             // txtCopiesData
             // 
@@ -175,6 +174,7 @@
             this.btnRent.TabIndex = 14;
             this.btnRent.Text = "Rent";
             this.btnRent.UseVisualStyleBackColor = true;
+            this.btnRent.Click += new System.EventHandler(this.btnRent_Click);
             // 
             // btnReturn
             // 
@@ -184,6 +184,7 @@
             this.btnReturn.TabIndex = 15;
             this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnNew
             // 
@@ -193,6 +194,7 @@
             this.btnNew.TabIndex = 16;
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnEdit
             // 
@@ -202,6 +204,7 @@
             this.btnEdit.TabIndex = 17;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -211,6 +214,7 @@
             this.btnDelete.TabIndex = 18;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClose
             // 
@@ -226,7 +230,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1127, 635);
+            this.ClientSize = new System.Drawing.Size(1131, 616);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -241,10 +245,10 @@
             this.Controls.Add(this.lblisbn);
             this.Controls.Add(this.txtCopiesData);
             this.Controls.Add(this.lblCopies);
-            this.Controls.Add(this.txtGenre);
-            this.Controls.Add(this.txtAuthorData);
-            this.Controls.Add(this.txtAuthor);
             this.Controls.Add(this.txtGenreData);
+            this.Controls.Add(this.lblAuthorData);
+            this.Controls.Add(this.txtAuthorData);
+            this.Controls.Add(this.lblGenreData);
             this.Controls.Add(this.txtTitleData);
             this.Controls.Add(this.lblTitle);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -262,10 +266,10 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TextBox txtTitleData;
-        private System.Windows.Forms.TextBox txtAuthor;
-        private System.Windows.Forms.Label txtGenreData;
-        private System.Windows.Forms.TextBox txtGenre;
-        private System.Windows.Forms.Label txtAuthorData;
+        private System.Windows.Forms.TextBox txtAuthorData;
+        private System.Windows.Forms.Label lblGenreData;
+        private System.Windows.Forms.TextBox txtGenreData;
+        private System.Windows.Forms.Label lblAuthorData;
         private System.Windows.Forms.TextBox txtCopiesData;
         private System.Windows.Forms.Label lblCopies;
         private System.Windows.Forms.TextBox txtisbndata;

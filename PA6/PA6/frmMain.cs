@@ -32,10 +32,7 @@ namespace PA6
             lstBooks.DataSource = myBooks;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -65,6 +62,69 @@ namespace PA6
             catch
             {
 
+            }
+        }
+
+        private void btnRent_Click(object sender, EventArgs e)
+        {
+            Book myBook = (Book)lstBooks.SelectedItem;
+            int temp = lstBooks.SelectedIndex;
+
+            myBook.copies--;
+            BookFile.SaveBook(myBook, cwid, "edit");
+            LoadList();
+            lstBooks.SelectedIndex = temp;
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            Book myBook = (Book)lstBooks.SelectedItem;
+            int temp = lstBooks.SelectedIndex;
+
+            myBook.copies++;
+            BookFile.SaveBook(myBook, cwid, "edit");
+            LoadList();
+            lstBooks.SelectedIndex = temp;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Book myBook = (Book)lstBooks.SelectedItem;
+
+            DialogResult dialogResult = MessageBox.Show("Are you sire you want to delete?", "Delete", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                BookFile.DeleteBook(myBook, cwid);
+                LoadList();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            Book myBook = (Book)lstBooks.SelectedItem;
+            frmEdit myForm = new frmEdit(myBook, "edit", cwid);
+            if (myForm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+            else
+            {
+                LoadList();
+            }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            Book myBook = new Book();
+            frmEdit myForm = new frmEdit(myBook, "new", cwid);
+            if (myForm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+            else
+            {
+                LoadList();
             }
         }
     }
